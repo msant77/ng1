@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<html>
+<head lang="pt-br">
+    <meta charset="iso-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>NG1 - Easy Angular 1 Scaffolding for Enterprise Projects</title>
+
+    <!-- Style sheets --> 
+
+    <link rel="stylesheet" type="text/css" href="js/src/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="js/src/font-awesome/css/font-awesome.min.css" />
+
+    
+    
+    <!--
+
+    <link href="css/app.css" rel="stylesheet" />
+
+    End of Style Sheets -->
+
+    <!-- Compiled Style Sheets*
+    <link href="css/ptmapp.v0.0.9.css" rel="stylesheet" />
+    *End of Compiled Style Sheets -->
+
+</head>
+
+
+<body ng-cloak>
+
+    <div ng-hide="true" class="aberturacontainer">
+      <div class="abertura">
+        <img src="images/logo.jpg"/>
+        <h2>Easy Angular 1 Scaffolding <br><b>msant.org</b></h2>
+        <br>
+        <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
+        <h4>&nbsp;Please wait, loading...</h4>
+      </div>
+      <br />
+    </div>
+
+    <div ng-include="'app/core/shell/shell.html'"></div>
+
+    <div class="container" style="padding-top:80px;">
+
+      <div ui-view></div>
+
+    </div>
+
+
+
+
+    <!-- Library Scripts 
+    <script type="text/javascript" src="js/src/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <script type="text/javascript" src="js/src/angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/src/angular-bootstrap/ui-bootstrap-tpls.min.js"></script> 
+    <script type="text/javascript" src="js/src/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/src/angular-route/angular-route.min.js"></script>
+
+    <script type="text/javascript" src="js/src/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="js/src/ngstorage/ngStorage.min.js"></script>
+
+    <!-- End Of Library Scripts -->
+
+    <!-- Concatenated Library Script*
+    <script type="text/javascript" src="js/vendor.js"></script> 
+    *End Concatenated Library Script -->
+
+
+<!-- 
+
+        DIVISION FROM VENDOR JS TO APP's JS
+
+-->
+
+    <!-- Application Script -->
+
+    <script src="app/app.module.js"></script>
+    <script src="app/core/app.core.module.js"></script>
+
+    <script src="app/core/start/core.start.module.js"></script>
+    <script src="app/core/shell/core.shell.module.js"></script>
+
+    <script src="app/biz/biz.core.module.js"></script>
+
+    <script src="app/biz/cliente/cliente.module.js"></script>
+    <script src="app/biz/cliente/cliente.service.js"></script>
+    <script src="app/biz/cliente/cliente.list.controller.js"></script>
+
+    <script src="app/biz/user/user.module.js"></script>
+    <script src="app/biz/user/user.service.js"></script>
+
+    <script src="app/core/shell/shell.controller.js"></script>
+
+    <script src="app/core/modal/core.modal.service.js"></script>
+    <script src="app/core/modal/core.modal.controller.js"></script>
+
+    <script src="app/core/localdb/core.localdb.service.js"></script>
+
+    
+    <!-- End Of Application Script -->
+
+
+
+    <!-- Concatenated Application Script*
+    <script src="js/app.v0.0.1.min.js"></script>
+    *End Of Concatenated Application Script -->
+
+
+</body>
+
+</html>
