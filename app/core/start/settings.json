@@ -31,7 +31,7 @@
     {
       "name" : "clientes", 
       "ngroute" : {
-              "url": "clientes",
+              "url": "/clientes",
               "templateUrl": "app/biz/cliente/cliente.list.html",
               "controller" : "BizClienteListController"
             },

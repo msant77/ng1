@@ -18,7 +18,7 @@
           $stateProvider.state(route.name, route.ngroute);
         });
 
-    console.log('coreRun on'); 
+    console.log(appRoutes); 
  	}
 
 
