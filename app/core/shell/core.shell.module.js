@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
- 	angular.module('core.shell', ['app.core']);
+ 	angular.module('core.shell', []);
 
 
 })();

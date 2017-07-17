@@ -2,12 +2,12 @@
     'use strict';
     angular
         .module('core.shell')
-        .controller('shell-controller', ShellController);
+        .controller('ShellController', ShellController);
 
 
-    ShellController.$inject = ['$timeout', '$scope', '$state'];
+    ShellController.$inject = ['$scope', 'config'];
 
-    function ShellController($timeout, $scope, $state) { 
+    function ShellController($scope, config) { 
 
         //resource to continuing to work with the vm standard in the DOM level
         $scope.vm = {}; //this makes vm appears in the DOM
@@ -15,7 +15,8 @@
 
         var init = function initializeController () {
 
-        	vm.title = 'app inicial ng 1';
+        	vm.title = config.title;
+            vm.busyMessage = 'shell says system loading'; 
 
             // vm.currentUser = currentUser;     
             // if (typeof modalInfo !== undefined) {

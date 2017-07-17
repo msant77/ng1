@@ -10,8 +10,9 @@
     "angular-route": "#1.6.4",
     "angular-sanitize": "~1.6.4",
     "angular-bootstrap": "~2.5.0",
-    "ngstorage" : "*",
-    "font-awesome" : "*"
+    "ngstorage": "*",
+    "font-awesome": "*",
+    "angular-ui-router": "^1.0.5"
   },
   "devDependencies": {}
 }

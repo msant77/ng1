@@ -5,9 +5,9 @@
     .module('biz.core')
     .factory('bizClienteService', BizClienteService);
 
-  BizClienteService.$inject = ['$http', '$q', 'exception', 'logger'];
+  BizClienteService.$inject = ['$http', '$q', 'config'];
   /* @ngInject */
-  function BizClienteService($http, $q, exception, logger) {
+  function BizClienteService($http, $q, config) {
     var service = {
       getPeople: getPeople,
       getMessageCount: getMessageCount

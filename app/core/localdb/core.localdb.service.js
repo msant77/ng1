@@ -3,9 +3,9 @@
     angular.module('app.core')
         .service('localdb', LocalDBService);
 
-    LocalDBService.$inject = ['$localStorage', 'appSettings'];
+    LocalDBService.$inject = ['$localStorage', 'config'];
   /* @ngInject */
-    function LocalDBService($localStorage, appSettings) {
+    function LocalDBService($localStorage, config) {
 
     	var svc = this; 
 

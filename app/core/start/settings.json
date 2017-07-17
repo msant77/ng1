@@ -1,5 +1,6 @@
 {
-  "settings": {
+  "config": {
+    "title" : "NG1 - AngularJS Enterprise Scaffolding",
     "version" : "v0.0.1", 
     "mod": 1,
     "defaultView": "clientes",
@@ -15,7 +16,7 @@
       "name" : "home", 
       "ngroute" : {
               "url": "/",
-              "templateUrl": "app/welcome.html"
+              "templateUrl": "/app/core/start/welcome.html"
             },
       "modules" : ["*"]
     }, 
@@ -23,16 +24,25 @@
       "name" : "blank", 
       "ngroute" : {
               "url": "blank",
-              "templateUrl": "app/welcome.html"
+              "templateUrl": "/app/core/start/welcome.html"
             },
       "modules" : ["blank"]
     }, 
     {
       "name" : "clientes", 
       "ngroute" : {
-              "url": "/clientes/:itemId/:searchCriteria/:sortField/:sortDirection/:page",
+              "url": "clientes",
               "templateUrl": "app/biz/cliente/cliente.list.html",
               "controller" : "BizClienteListController"
+            },
+        "modules" : ["admin", "dev"]
+    },
+    {
+      "name" : "clientesOld", 
+      "ngroute" : {
+              "url": "/clientes/:itemId/:searchCriteria/:sortField/:sortDirection/:page",
+              "templateUrl": "app/biz/cliente/cliente.list.html",
+              "controller" : "BizClienteListController", 
               "reloadOnSearch" : false, 
               "params": {
                   "itemId": {

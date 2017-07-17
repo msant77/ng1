@@ -5,7 +5,7 @@
         .controller('CoreModalController', CoreModalController);
 
 
-    CoreModalController.$inject = ['$timeout', '$scope', '$state', '$uibModalInstance', 'modalInfo', 'currentUser', 'appSettings'];
+    CoreModalController.$inject = ['$timeout', '$scope', '$state', '$uibModalInstance', 'modalInfo',  'config'];
 
     function CoreModalController($timeout, $scope, $state, $uibModalInstance, modalInfo, currentUser, appSettings) { 
 
@@ -44,4 +44,5 @@
         vm.close  = $scope.cancel; 
         vm.goHome = $scope.goHome; 
     }
+
 })();

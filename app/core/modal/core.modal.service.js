@@ -1,11 +1,11 @@
 (function () {
 	'use strict';
 	angular.module('app.core')
-		.service('coreModalService', CoreModalService);
+		.service('coreModal', CoreModalService);
 
-	CoreModalService.$inject = ['$rootScope', '$interval', '$uibModal', 'appSettings'];
+	CoreModalService.$inject = ['$rootScope', '$interval', '$uibModal', 'config'];
 	/* @ngInject */
-	function CoreModalService($rootScope, $interval, $uibModal, appSettings) {
+	function CoreModalService($rootScope, $interval, $uibModal, config) {
 
 		var svc = this;
 

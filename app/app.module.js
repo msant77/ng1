@@ -1,7 +1,13 @@
 (function(){
 	'use strict';
 
- 	angular.module('app', ['app.start', 'app.core', 'biz.cliente', 'biz.user']);
+ 	//angular.module('app', ['app.core', 'biz.core']);
+
+
+	angular.module('app', ['app.core', 'biz.core']);
+
+
+
 
 
 })();

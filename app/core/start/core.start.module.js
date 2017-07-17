@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-	var coreStart = angular.module('app.start', []);
+	var coreStart = angular.module('core.start', []); 
 
   fetchData().then(bootstrapApplication);
 
@@ -9,8 +9,11 @@
     var $http = initInjector.get('$http');
 
     return $http.get('/app/core/start/settings.json').then(function(response) {
-      commonServices.constant('appSettings', response.data.settings);
-      commonServices.constant('appRoutes', response.data.routes); 
+
+      coreStart.constant('config', response.data.config);
+      coreStart.constant('appRoutes', response.data.routes); 
+
+
     }, function(errorResponse) {
       console.log('It was not possible to load the configuration file.');
     });
