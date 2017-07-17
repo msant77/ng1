@@ -9,26 +9,30 @@
   /* @ngInject */
   function BizClienteService($http, $q, config) {
     var service = {
-      getPeople: getPeople,
-      getMessageCount: getMessageCount
+      getList: getList,
+      getTitleList: getTitleList
     };
 
     return service;
 
-    function getMessageCount() { return $q.when(72); }
+    function getTitleList() { return $q.when('Tela de Listagem de Clientes'); }
 
-    function getPeople() {
-      return $http.get('/api/people')
-        .then(success)
-        .catch(fail);
+    function getList() {
 
-      function success(response) {
-        return response.data;
-      }
-
-      function fail(e) {
-        return exception.catcher('XHR Failed for getPeople')(e);
-      }
+      return [
+        {
+          name : 'Marieta Severo',
+          idade : 89
+        }, 
+        {
+          name : 'Suzanna Vieira', 
+          idade : 99
+        },
+        {
+          name : 'Graciliane Feijoa', 
+          idade : 30
+        }
+      ];
     }
   }
 })();

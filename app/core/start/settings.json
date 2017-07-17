@@ -33,39 +33,7 @@
       "ngroute" : {
               "url": "/clientes",
               "templateUrl": "app/biz/cliente/cliente.list.html",
-              "controller" : "BizClienteListController"
-            },
-        "modules" : ["admin", "dev"]
-    },
-    {
-      "name" : "clientesOld", 
-      "ngroute" : {
-              "url": "/clientes/:itemId/:searchCriteria/:sortField/:sortDirection/:page",
-              "templateUrl": "app/biz/cliente/cliente.list.html",
-              "controller" : "BizClienteListController", 
-              "reloadOnSearch" : false, 
-              "params": {
-                  "itemId": {
-                      "value": "",
-                      "squash": false
-                  }, 
-                  "searchCriteria" : {
-                      "value" : "",
-                      "squash" : false
-                  },
-                  "sortField": {
-                      "value": "dateTime",
-                      "squash": false
-                  },
-                  "sortDirection": {
-                      "value": "desc",
-                      "squash": false
-                  },
-                  "page": {
-                      "value": "1",
-                      "squash": false
-                  }
-              }
+              "controller" : "BizClienteListController as vm"
             },
         "modules" : ["admin", "dev"]
     }
