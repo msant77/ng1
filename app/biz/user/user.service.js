@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('biz.core')
+    .module('biz.services')
     .factory('bizUserService', BizUserService);
 
   BizUserService.$inject = ['$http', '$q', 'config'];
