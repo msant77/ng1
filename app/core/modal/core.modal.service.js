@@ -36,6 +36,8 @@
 					}
 				}
 			});
+
+			return svc.modalInstance; 
 		};
 	}
 }());
