@@ -11,7 +11,8 @@
     "angular-bootstrap": "~2.5.0",
     "ngstorage": "*",
     "font-awesome": "*",
-    "angular-ui-router": "^1.0.5"
+    "angular-ui-router": "^1.0.5",
+    "angular-facebook": "^0.2.3"
   },
   "devDependencies": {}
 }

@@ -1,6 +1,13 @@
 # ng1
 angular 1.x scaffolding for modularized enterprise projects
 
+##Wish-List
+
+- Material Design in the shell 
+- Facebook auth (angular-facebook) 
+- Firebase auth (angular-fire) 
+
+
 
 ## Getting Started
 
