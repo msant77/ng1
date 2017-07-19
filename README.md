@@ -6,7 +6,8 @@ angular 1.x scaffolding for modularized enterprise projects
 - Material Design in the shell 
 - Facebook auth (angular-facebook) 
 - Firebase auth (angular-fire) 
-
+- Begin to insert npm/grunt/gulp in order to build the solution to prod
+- consider putting it to es7 and add a transpiler task
 
 
 ## Getting Started
