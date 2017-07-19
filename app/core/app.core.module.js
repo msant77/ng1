@@ -2,7 +2,7 @@
 	'use strict';
 
  	angular
- 		.module('app.core', ['core.shell', 'core.start', 'ui.router', 'ui.bootstrap'])
+ 		.module('app.core', ['core.shell', 'core.start', 'ui.router', 'ui.bootstrap', 'ngStorage'])
  		.config(coreRun);
 
  	coreRun.$inject = ['$stateProvider', '$urlRouterProvider', 'appRoutes']; 

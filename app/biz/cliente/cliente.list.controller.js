@@ -14,6 +14,9 @@
     activate();
 
     vm.open = function openItem (item) {
+
+        bizClienteService.addView(item); 
+
         var modal = {
           options : {
             controller : 'BizClienteDetailsController as vm', 
@@ -42,11 +45,10 @@
     }
 
     function activate() {
-      vm.list = bizClienteService.getList(); 
+      bizClienteService.getList().then(function (res) {
+        vm.list = res; 
+      }); 
 
-
-
-      //console.log('Activated Admin View');
     }
   }
 })();
