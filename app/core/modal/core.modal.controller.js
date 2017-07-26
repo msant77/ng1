@@ -19,7 +19,7 @@
             if (typeof modalInfo !== undefined) {
                 vm.modalInfo = modalInfo; 
 
-                if (modalInfo.type = 'dialog') { 
+                if (modalInfo.type === 'dialog') { 
                   initDialog(); 
                 }
             }
@@ -29,16 +29,16 @@
           var buttons = [
             {name : 'ok', class : 'btn btn-info', icon : 'fa fa-info', text : 'ok', callback : undefined}, 
             {name : 'cancel', class : 'btn btn-default', icon : 'fa fa-sign-out', text : 'cancel', callback : undefined},            
-            {name : 'warning', class : 'btn btn-warning', icon : 'fa fa-warning', text : 'warning', callback : undefined},
-            {name : 'danger', class : 'btn btn-danger', icon : 'fa fa-skull', text : 'warning', callback : undefined},
+            {name : 'warning', class : 'btn btn-warning', icon : 'fa fa-bell', text : 'warning', callback : undefined},
+            {name : 'danger', class : 'btn btn-danger', icon : 'fa fa-warning', text : 'warning', callback : undefined},
             {name : 'yes', class : 'btn btn-success', icon : 'fa fa-thumbs-up', text : 'yes', callback : undefined},
             {name : 'no', class : 'btn', icon : 'fa fa-thumbs-down', text : 'no', callback : undefined}
           ]
 
-          var chosen = vm.modalInfo.buttons; 
-          vm.title = vm.modalInfo.title;
-          vm.message = vm.modalInfo.message;
-          vm.icon = vm.modalInfo.icon;
+          var chosen = modalInfo.buttons; 
+          vm.title = modalInfo.title;
+          vm.message = modalInfo.message;
+          vm.icon = modalInfo.icon;
 
           vm.buttons = 
             chosen.map(button => {
