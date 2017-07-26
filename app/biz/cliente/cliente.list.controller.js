@@ -44,6 +44,29 @@
        });
     }
 
+    vm.info = function showInfoDialogBox (item) { 
+
+      coreModal.info("Hello, this is an info box", "Info Box", function () {
+        console.log('the ok button from the info box has been clicked'); 
+      });
+
+    }
+
+
+    vm.delete = function showConfirmationDialogBox (item) { 
+
+      coreModal.confirm(
+        "Danger, do you confirm this operation ?", 
+        "Confirmation Box", 
+        function () {
+          console.log('the ok button from the confirmation box has been clicked'); 
+        },
+        function () {
+          console.log('cancel button from the confirmation box has been chosen instead')
+        });
+    }
+
+
     function activate() {
       bizClienteService.getList().then(function (res) {
         vm.list = res; 

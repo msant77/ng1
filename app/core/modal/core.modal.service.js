@@ -39,5 +39,50 @@
 
 			return svc.modalInstance; 
 		};
+
+		//dialog box operations 
+		var showDialog = function toggleModalOn(data) {
+
+			data.type = 'dialog'; 
+
+			svc.modalInstance = $uibModal.open({
+				animation: true,
+				templateUrl: 'app/core/modal/core.modal.html',
+				controller: 'CoreModalController as vm',
+				resolve: {
+					modalInfo: function () {
+						return data;
+					}
+				}
+			});
+
+			return svc.modalInstance; 
+		};
+
+		svc.info = function showInfoModal (message, title, callback) {
+			var data = {
+				message : message,
+				title : title, 
+				buttons : [
+					{name : 'ok', text : 'Ok', callback : callback}
+				]
+			}
+
+			return showDialog(data); 
+		}
+
+		svc.confirm = function showConfirmationModal ( message, title, callbackOk, callbackCancel) {
+			var data = {
+				message : message,
+				title : title, 
+				buttons : [
+					{name : 'yes', text : 'yes', callback : callbackOk},
+					{name : 'no', text : 'no', callback : callbackCancel}
+				]
+			}
+
+			return showDialog(data); 
+
+		}
 	}
 }());

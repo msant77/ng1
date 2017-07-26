@@ -17,13 +17,45 @@
 
             vm.currentUser = currentUser;     
             if (typeof modalInfo !== undefined) {
-                if (!isNaN(modalInfo)) {
-                    vm.modalInfo = modalInfo; 
+                vm.modalInfo = modalInfo; 
+
+                if (modalInfo.type = 'dialog') { 
+                  initDialog(); 
                 }
             }
         };
 
+        var initDialog = function initializeDialogBox() { 
+          var buttons = [
+            {name : 'ok', class : 'btn btn-info', icon : 'fa fa-info', text : 'ok', callback : undefined}, 
+            {name : 'cancel', class : 'btn btn-default', icon : 'fa fa-sign-out', text : 'cancel', callback : undefined},            
+            {name : 'warning', class : 'btn btn-warning', icon : 'fa fa-warning', text : 'warning', callback : undefined},
+            {name : 'danger', class : 'btn btn-danger', icon : 'fa fa-skull', text : 'warning', callback : undefined},
+            {name : 'yes', class : 'btn btn-success', icon : 'fa fa-thumbs-up', text : 'yes', callback : undefined},
+            {name : 'no', class : 'btn', icon : 'fa fa-thumbs-down', text : 'no', callback : undefined}
+          ]
+
+          var chosen = vm.modalInfo.buttons; 
+          vm.title = vm.modalInfo.title;
+          vm.message = vm.modalInfo.message;
+
+          vm.buttons = 
+            chosen.map(button => {
+              var template = buttons.find(btn => btn.name === button.name); 
+
+              button.class = template.class; 
+              button.icon = template.icon; 
+
+              return button; 
+            }); 
+        }
+
         init(); 
+
+        vm.buttonClick = function(button) { 
+          button.callback(); 
+          $uibModalInstance.close(); 
+        }
 
         $scope.ok = function () {
             $uibModalInstance.close();
