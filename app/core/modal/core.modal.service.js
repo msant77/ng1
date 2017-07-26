@@ -63,6 +63,7 @@
 			var data = {
 				message : message,
 				title : title, 
+				icon : 'fa fa-info',
 				buttons : [
 					{name : 'ok', text : 'Ok', callback : callback}
 				]
@@ -75,6 +76,7 @@
 			var data = {
 				message : message,
 				title : title, 
+				icon : 'fa fa-question',
 				buttons : [
 					{name : 'yes', text : 'yes', callback : callbackOk},
 					{name : 'no', text : 'no', callback : callbackCancel}

@@ -38,6 +38,7 @@
           var chosen = vm.modalInfo.buttons; 
           vm.title = vm.modalInfo.title;
           vm.message = vm.modalInfo.message;
+          vm.icon = vm.modalInfo.icon;
 
           vm.buttons = 
             chosen.map(button => {
