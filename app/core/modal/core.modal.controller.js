@@ -28,6 +28,7 @@
         var initDialog = function initializeDialogBox() { 
           var buttons = [
             {name : 'ok', class : 'btn btn-info', icon : 'fa fa-info', text : 'ok', callback : undefined}, 
+            {name : 'gotit', class : 'btn btn-warning', icon : 'fa fa-warning', text : 'ok', callback : undefined}, 
             {name : 'cancel', class : 'btn btn-default', icon : 'fa fa-sign-out', text : 'cancel', callback : undefined},            
             {name : 'warning', class : 'btn btn-warning', icon : 'fa fa-bell', text : 'warning', callback : undefined},
             {name : 'danger', class : 'btn btn-danger', icon : 'fa fa-warning', text : 'warning', callback : undefined},
@@ -54,7 +55,9 @@
         init(); 
 
         vm.buttonClick = function(button) { 
-          button.callback(); 
+          if (button.callback) {
+            button.callback(); 
+          }
           $uibModalInstance.close(); 
         }
 

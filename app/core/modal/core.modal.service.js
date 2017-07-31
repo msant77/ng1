@@ -86,5 +86,19 @@
 			return showDialog(data); 
 
 		}
+
+		svc.err = function showErrModal (message, title, callback) {
+			var data = {
+				message : message,
+				title : title, 
+				icon : 'fa fa-warning',
+				buttons : [
+					{name : 'gotit', text : 'Got It!', callback : callback}
+				]
+			}
+
+			return showDialog(data); 			
+		}
+
 	}
 }());

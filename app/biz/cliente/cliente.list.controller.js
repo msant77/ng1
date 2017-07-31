@@ -52,6 +52,13 @@
 
     }
 
+    vm.err = function showInfoDialogBox (item) { 
+
+      coreModal.err("Wow, this is bad. System just popped an error", "Error Box", function () {
+        console.log('the Got It button from the error box has been clicked'); 
+      });
+
+    }
 
     vm.delete = function showConfirmationDialogBox (item) { 
 
