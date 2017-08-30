@@ -24,7 +24,6 @@
     activate();
 
     function activate() {
-
       vm.item = modalInfo; 
 
       vm.title = vm.item.name; 
@@ -57,10 +56,10 @@
     }
 
     function closeModal() {
+      bizClienteService.addClose(modalInfo); 
     	modalInfo.update = 5; 
     	coreModal.notify(vm.item); 
-      $scope.$dismiss();
-      $scope.$close(); 
+      coreModal.close(); 
     }
 
   }

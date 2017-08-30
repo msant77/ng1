@@ -1,12 +1,17 @@
-<div class="modal-header">
-    <h3 class="modal-title"><i ng-class="vm.icon">&nbsp;</i>{{vm.title}}</h3>
-</div>
-<div class="modal-body">
-
-	<h4>{{vm.message}}</h4>
-
-</div>
-<div class="modal-footer">
-	<button ng-repeat="button in vm.buttons" ng-class="button.class" ng-click="vm.buttonClick(button)"><i ng-class="button.icon"></i>&nbsp;{{button.text}}</button>
-</div>
-
+<md-dialog aria-label="{{vm.title}}"> 
+	 <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{vm.title}}</h2>
+      </div>
+    </md-toolbar>
+	 <md-dialog-content>
+	 	<div class="md-dialog-content">
+			<p>{{vm.message}}</p>
+		</div>
+	 </md-dialog-content> 
+	 <md-dialog-actions> 
+	   <md-button ng-repeat="button in vm.buttons"  ng-class="button.class" ng-click="vm.buttonClick(button)"> 
+	     <i ng-class="button.icon"></i>&nbsp;{{button.text}}
+	   </md-button> 
+	 </md-dialog-actions> 
+</md-dialog>

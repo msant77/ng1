@@ -1,0 +1,24 @@
+{
+  "name": "ng1",
+  "version": "1.0.0",
+  "description": "ng1",
+  "main": "core.start.module.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Renan Bet Rodrigues",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-minify": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-strip-comments": "^2.5.1",
+    "gulp-uglify": "^3.0.0"
+  }
+}

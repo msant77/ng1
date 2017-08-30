@@ -1,0 +1,34 @@
+<md-sidenav md-component-id="sidebar" md-whiteframe="4">
+  <md-content>
+    <header layout="column">
+      <div layout="row" flex layout-align="center center">
+        <md-icon ng-click="vm.closeSidebar($event)">keyboard_arrow_left</md-icon>
+      </div>
+
+      <div >
+        <img src="images/profile.jpeg">
+      </div>
+
+      <h3>{{vm.name}}</h3>
+    </header>
+    
+    <md-list>
+      <md-list-item>
+        <md-icon aria-label="icon-home24">
+          home
+        </md-icon>
+        <p flex class="md-body-2"><a href="#!/">Welcome</a></p>
+      </md-list-item>
+
+      <md-list-item>
+        <md-icon>info_outline</md-icon>
+        <p flex class="md-body-2"><a ui-sref="clientes">Clientes</a></p>
+      </md-list-item>
+
+      <md-list-item>
+        <md-icon>info_outline</md-icon>
+        <p flex class="md-body-2">Logout</p>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</md-sidenav>

@@ -10,7 +10,7 @@
   function BizClienteService($http, $q, config, localdb) {
     var service = {
       addView : addView, 
-      // addClose : addClose, 
+      addClose : addClose, 
       // addDismiss : addDismiss, 
       getList: getList,
       getTitleList: getTitleList
@@ -20,9 +20,6 @@
 
     var list = localdb.get(key); 
 
-
-
-
     return service;
 
     function addView (item) { 
@@ -30,12 +27,14 @@
         return item.name == i.name;
       }); 
       found.views++; 
-
-      //localdb.set(key, list); 
-
-      //return found; 
     }
 
+    function addClose (item) { 
+      var found = list.find(function(i) {
+        return item.name == i.name;
+      }); 
+      found.closed++; 
+    }
 
 
     function getTitleList() { return $q.when('Tela de Listagem de Clientes'); }

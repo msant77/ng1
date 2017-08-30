@@ -5,9 +5,9 @@
         .controller('CoreModalController', CoreModalController);
 
 
-    CoreModalController.$inject = ['$timeout', '$scope', '$state', '$uibModalInstance', 'modalInfo',  'config'];
+    CoreModalController.$inject = ['$timeout', '$scope', '$state', '$mdDialog', 'modalInfo',  'config'];
 
-    function CoreModalController($timeout, $scope, $state, $uibModalInstance, modalInfo, currentUser, appSettings) { 
+    function CoreModalController($timeout, $scope, $state, $mdDialog, modalInfo, appSettings) { 
 
         //resource to continuing to work with the vm standard in the DOM level
         $scope.vm = {}; //this makes vm appears in the DOM
@@ -15,7 +15,7 @@
 
         var init = function initializeController () {
 
-            vm.currentUser = currentUser;     
+            // vm.currentUser = currentUser;     
             if (typeof modalInfo !== undefined) {
                 vm.modalInfo = modalInfo; 
 
@@ -27,13 +27,13 @@
 
         var initDialog = function initializeDialogBox() { 
           var buttons = [
-            {name : 'ok', class : 'btn btn-info', icon : 'fa fa-info', text : 'ok', callback : undefined}, 
-            {name : 'gotit', class : 'btn btn-warning', icon : 'fa fa-warning', text : 'ok', callback : undefined}, 
-            {name : 'cancel', class : 'btn btn-default', icon : 'fa fa-sign-out', text : 'cancel', callback : undefined},            
-            {name : 'warning', class : 'btn btn-warning', icon : 'fa fa-bell', text : 'warning', callback : undefined},
-            {name : 'danger', class : 'btn btn-danger', icon : 'fa fa-warning', text : 'warning', callback : undefined},
-            {name : 'yes', class : 'btn btn-success', icon : 'fa fa-thumbs-up', text : 'yes', callback : undefined},
-            {name : 'no', class : 'btn', icon : 'fa fa-thumbs-down', text : 'no', callback : undefined}
+            {name : 'ok', class : 'md-raised md-primary', icon : 'fa fa-info', text : 'ok', callback : undefined}, 
+            {name : 'gotit', class : 'md-raised', icon : 'fa fa-warning', text : 'ok', callback : undefined}, 
+            {name : 'cancel', class : 'md-raised md-warn', icon : 'fa fa-sign-out', text : 'cancel', callback : undefined},            
+            {name : 'warning', class : 'md-raised md-warn', icon : 'fa fa-bell', text : 'warning', callback : undefined},
+            {name : 'danger', class : 'md-raised md-warn', icon : 'fa fa-warning', text : 'warning', callback : undefined},
+            {name : 'yes', class : 'md-raised md-primary', icon : 'fa fa-thumbs-up', text : 'yes', callback : undefined},
+            {name : 'no', class : 'md-raised md-warn', icon : 'fa fa-thumbs-down', text : 'no', callback : undefined}
           ]
 
           var chosen = modalInfo.buttons; 
@@ -58,20 +58,20 @@
           if (button.callback) {
             button.callback(); 
           }
-          $uibModalInstance.close(); 
+          $mdDialog.hide(); 
         }
 
         $scope.ok = function () {
-            $uibModalInstance.close();
+            $mdDialog.hide();
         };
 
         $scope.cancel = function () {
-            $uibModalInstance.dismiss('cancel');
+            $mdDialog.hide('cancel');
         };
 
         // closes modal and send view to module defaultView
         $scope.goHome = function () {
-          $uibModalInstance.dismiss('cancel');
+          $mdDialog.hide('cancel');
           $state.go(appSettings.defaultView); 
         }
 
