@@ -9,7 +9,7 @@
 
  	function coreRun ($stateProvider, $urlRouterProvider, appRoutes) { 
 
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/home");
 
     appRoutes
       .forEach(
