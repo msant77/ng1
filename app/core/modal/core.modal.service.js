@@ -3,9 +3,9 @@
 	angular.module('app.core')
 		.service('coreModal', CoreModalService);
 
-	CoreModalService.$inject = ['$rootScope', '$interval', '$uibModal', 'config'];
+	CoreModalService.$inject = ['$rootScope', '$mdDialog', 'config'];
 	/* @ngInject */
-	function CoreModalService($rootScope, $interval, $uibModal, config) {
+	function CoreModalService($rootScope, $mdDialog, config) {
 
 		var svc = this;
 
@@ -19,21 +19,19 @@
 		};
 
 		svc.close = function toggleModalOff() {
-			$uibModal.dismiss('cancel');
+			$mdDialog.hide(alert,'cancel');
+			alert = undefined;
 		};
 
 		svc.show = function toggleModalOn(obj) {
-
 			var options = obj.options;
 
-			svc.modalInstance = $uibModal.open({
-				animation: true,
+			svc.modalInstance = $mdDialog.show({
 				templateUrl: options.templateUrl,
 				controller: options.controller,
-				resolve: {
-					modalInfo: function () {
-						return obj.data;
-					}
+				controllerAs: 'vm',
+				locals: {
+					modalInfo: obj.data
 				}
 			});
 
@@ -42,17 +40,15 @@
 
 		//dialog box operations 
 		var showDialog = function toggleModalOn(data) {
-
+      
 			data.type = 'dialog'; 
 
-			svc.modalInstance = $uibModal.open({
-				animation: true,
+			svc.modalInstance = $mdDialog.show({				
 				templateUrl: 'app/core/modal/core.modal.html',
-				controller: 'CoreModalController as vm',
-				resolve: {
-					modalInfo: function () {
-						return data;
-					}
+				controller: 'CoreModalController',
+				controllerAs: 'vm',
+				locals: {
+					modalInfo: data
 				}
 			});
 
@@ -65,7 +61,7 @@
 				title : title, 
 				icon : 'fa fa-info',
 				buttons : [
-					{name : 'ok', text : 'Ok', callback : callback}
+					{name : 'ok', text : 'Ok', callback : callback, class:'md-raised md-primary'}
 				]
 			}
 

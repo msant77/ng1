@@ -15,7 +15,7 @@
     {
       "name" : "home", 
       "ngroute" : {
-              "url": "/",
+              "url": "/home",
               "templateUrl": "/app/core/start/welcome.html"
             },
       "modules" : ["*"]

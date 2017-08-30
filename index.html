@@ -7,13 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>NG1 - Easy Angular 1 Scaffolding for Enterprise Projects</title>
 
-    <!-- Style sheets --> 
+    <!-- Style sheets -->
 
-    <link rel="stylesheet" type="text/css" href="js/src/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="js/src/angular-material/angular-material.min.css">  
     <link rel="stylesheet" type="text/css" href="js/src/font-awesome/css/font-awesome.min.css" />
+    
 
-    
-    
     <!--
 
     <link href="css/app.css" rel="stylesheet" />
@@ -21,9 +20,12 @@
     End of Style Sheets -->
 
     <!-- Compiled Style Sheets*
-    <link href="css/ptmapp.v0.0.9.css" rel="stylesheet" />
-    *End of Compiled Style Sheets -->
+    <link rel="stylesheet" href="dist/angular-material/angular-material.min.css"> 
+    <link rel="stylesheet" type="text/css" href="dist/font-awesome/css/font-awesome.min.css" />
+    -->
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">   
 </head>
 
 
@@ -31,9 +33,6 @@
 
     <div ng-hide="true" class="aberturacontainer">
       <div class="abertura">
-        <img src="images/logo.jpg"/>
-        <h2>Easy Angular 1 Scaffolding <br><b>msant.org</b></h2>
-        <br>
         <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
         <h4>&nbsp;Please wait, loading...</h4>
       </div>
@@ -42,32 +41,28 @@
 
     <div ng-include="'app/core/shell/shell.html'"></div>
 
-
-
-
-
-    <!-- Library Scripts 
-    <script type="text/javascript" src="js/src/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <!-- Library Scripts -->
     <script type="text/javascript" src="js/src/angular/angular.min.js"></script>
-    <script type="text/javascript" src="js/src/angular-bootstrap/ui-bootstrap-tpls.min.js"></script> 
     <script type="text/javascript" src="js/src/angular-resource/angular-resource.min.js"></script>
     <script type="text/javascript" src=" js/src/angular-ui-router/release/angular-ui-router.min.js"></script>
-
     <script type="text/javascript" src="js/src/angular-sanitize/angular-sanitize.min.js"></script>
     <script type="text/javascript" src="js/src/ngstorage/ngStorage.min.js"></script>
-
+    
+    <script type="text/javascript" src="js/src/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="js/src/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="js/src/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="js/src/angular-material/angular-material.min.js"></script>
+    
     <!-- End Of Library Scripts -->
 
-    <!-- Concatenated Library Script*
-    <script type="text/javascript" src="js/vendor.js"></script> 
-    *End Concatenated Library Script -->
-
-
-<!-- 
+    <!-- Concatenated Library Script* 
+    <script type="text/javascript" src="dist/js/lib.min.js"></script> 
+    -->
+    <!-- 
 
         DIVISION FROM VENDOR JS TO APP's JS
 
--->
+    -->
 
     <!-- Application Script -->
 
@@ -77,6 +72,8 @@
     <script src="app/core/start/core.start.module.js"></script>
     <script src="app/core/shell/core.shell.module.js"></script>
 
+    <script src="app/core/modal/core.modal.service.js"></script>
+    <script src="app/core/modal/core.modal.controller.js"></script>
 
     <script src="app/biz/app.biz.module.js"></script>
 
@@ -92,20 +89,22 @@
 
     <script src="app/core/shell/shell.controller.js"></script>
 
-    <script src="app/core/modal/core.modal.service.js"></script>
-    <script src="app/core/modal/core.modal.controller.js"></script>
-
     <script src="app/core/localdb/core.localdb.service.js"></script>
-
+    
+    <script src="app/core/login/login.service.js"></script>
+    <script src="app/core/login/login.controller.js"></script>
+    <script src="app/core/login/login.component.js"></script>
+    
+    <script src="app/core/shell/navbar/navbar.controller.js"></script>
+    <script src="app/core/shell/navbar/navbar.component.js"></script>
+    <script src="app/core/shell/sidebar/sidebar.controller.js"></script>
+    <script src="app/core/shell/sidebar/sidebar.component.js"></script>
+    
     
     <!-- End Of Application Script -->
 
-
-
     <!-- Concatenated Application Script*
-    <script src="js/app.v0.0.1.min.js"></script>
-    *End Of Concatenated Application Script -->
-
+    <script src="dist/js/app.min.js"></script>-->
 
 </body>
 

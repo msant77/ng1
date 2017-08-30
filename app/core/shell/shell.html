@@ -1,12 +1,13 @@
-<div ng-controller="ShellController as vm">
-  <header class="clearfix">
-    <h3>{{vm.title}}</h3>
-  </header>
+<div layout="column" layout-fill>
+  <div layout="column">
+    <navbar></navbar>
+    <sidebar></sidebar>
+    
+    <main flex layout="row">
 
-  <div ng-include="'app/core/shell/navbar.html'"></div>
-
-  <section id="content" class="content">
-    <div ui-view></div>
-  </section>
-
+      <md-content class="content">
+        <div class="container" ui-view></div>
+      </md-content>
+    </main>
+  </div> 
 </div>

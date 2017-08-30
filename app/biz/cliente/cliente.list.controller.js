@@ -8,40 +8,30 @@
   BizClienteListController.$inject = ['$scope', 'coreModal', 'bizClienteService'];
   /* @ngInject */
   function BizClienteListController($scope, coreModal, bizClienteService) {
+
     var vm = this;
     vm.title = 'Clientes';
-
     activate();
 
     vm.open = function openItem (item) {
-
         bizClienteService.addView(item); 
 
         var modal = {
           options : {
-            controller : 'BizClienteDetailsController as vm', 
+            controller : 'BizClienteDetailsController', 
             templateUrl : 'app/biz/cliente/cliente.details.html'
           }, 
           data : item
         };           
 
-      coreModal.subscribe($scope, function (arg1, arg2) {
-        console.log('closed with item update'); 
-        //console.log()
-      });
+        coreModal.subscribe($scope, function (arg1, arg2) {
+          console.log('closed with item update'); 
+          //console.log()
+        });
 
 
-      var instance = coreModal.show(modal); 
+        var instance = coreModal.show(modal); 
 
-       instance.result.then(function(){
-        //Get triggers when modal is closed
-        console.log('modal closed');
-        //never triggers        
-       }, function(){
-        console.log('modal dismissed');
-        console.log(item);
-        //gets triggers when modal is dismissed.
-       });
     }
 
     vm.info = function showInfoDialogBox (item) { 

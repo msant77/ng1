@@ -1,17 +1,16 @@
-<br>
-<br>
+<md-list ng-cloak>
+	<md-subheader class="md-no-sticky">Clientes</md-subheader>
+	<md-list-item class="secondary-button-padding" ng-click="doPrimaryAction($event)" ng-repeat="item in vm.list">
+		<p>{{item.name}}</p>
+		<p>Views&nbsp;<b>{{item.views}}</b></p>
+		<p>Closed&nbsp;<b>{{item.closed}}</b></p>
+		<!-- <p>Dismissed&nbsp;<b>{{item.dismissed}}</b></p> -->
+		<md-button class="md-secondary" ng-click="vm.open(item)">More Info</md-button>
+	</md-list-item>
+</md-list>
 
-<ul>
-	<li ng-repeat="item in vm.list">
-		<h4>{{item.name}}</h4>
-		<br>
-		{{item.idade}}
-		<p>views : <b>{{item.views}}</b></p>
-		<p>closed : <b>{{item.closed}}</b></p>
-		<p>dismissed : <b>{{item.dismissed}}</b></p>
-		<button class="btn btn-info" ng-click="vm.open(item)">Details</button>
-		<button class="btn btn-primary" ng-click="vm.info(item)">Dialog Info</button>
-		<button class="btn btn-info" ng-click="vm.delete(item)">Dialog Confirmation</button>
-		<button class="btn btn-warning" ng-click="vm.err(item)">Err Message</button>
-	</li>
-</ul>
+<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+  <md-button class="md-raised md-primary" ng-click="vm.info(item)">Dialog Info</md-button>
+  <md-button class="md-raised md-warn" ng-click="vm.delete(item)">Dialog Confirmation</md-button>
+  <md-button class="md-raised" ng-click="vm.err(item)">Err Message</md-button>
+</section>
