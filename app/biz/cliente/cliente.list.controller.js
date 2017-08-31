@@ -5,9 +5,9 @@
     .module('biz.cliente')
     .controller('BizClienteListController', BizClienteListController);
 
-  BizClienteListController.$inject = ['$scope', 'coreModal', 'bizClienteService'];
+  BizClienteListController.$inject = ['$scope', 'coreModal', 'bizClienteService','LoginService'];
   /* @ngInject */
-  function BizClienteListController($scope, coreModal, bizClienteService) {
+  function BizClienteListController($scope, coreModal, bizClienteService,LoginService) {
 
     var vm = this;
     vm.title = 'Clientes';
@@ -65,9 +65,11 @@
 
 
     function activate() {
+      LoginService.islogged();
       bizClienteService.getList().then(function (res) {
         vm.list = res; 
-      }); 
+      });   
+      
 
     }
   }

@@ -1,11 +1,10 @@
-<div layout="column" layout-fill>
+<div layout="column" layout-fill ng-controller="ShellController as vm">
   <div layout="column">
     <navbar></navbar>
     <sidebar></sidebar>
     
     <main flex layout="row">
-
-      <md-content class="content">
+      <md-content flex>
         <div class="container" ui-view></div>
       </md-content>
     </main>

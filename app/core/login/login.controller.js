@@ -10,12 +10,15 @@
         var ctrl = this;
 
         ctrl.login = function() {
-            // @todo promise
-            if(LoginService.login(ctrl.name, ctrl.password)) {
-                $state.go('dashboard');
-            } else {
+            var promise = LoginService.login(ctrl.name, ctrl.password);
+            promise.then(function(data){
+                console.log(data);
+                $state.go('clientes');
+            })
+            .catch(function(data){
                 ctrl.loginForm.password.$setValidity('invalid_password', false);
-            }
+                alert(data);               
+            });
         };
     }
 })();
