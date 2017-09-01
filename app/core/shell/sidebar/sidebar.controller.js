@@ -4,14 +4,19 @@
         .module('core.shell')
         .controller('SidebarController', SidebarController);
 
-    SidebarController.$inject = ['$scope','$mdSidenav', 'LoginService', '$state'];
+    SidebarController.$inject = ['$scope','$mdSidenav', 'LoginService', '$state','localdb'];
 
-    function SidebarController($scope, $mdSidenav, LoginService, $state) { 
+    function SidebarController($scope, $mdSidenav, LoginService, $state, localdb) { 
       $scope.vm = {}; //this makes vm appears in the DOM
       var vm = $scope.vm; //this makes it to appear in here  
 
+      function init(){
+        var user = localdb.get("loggeduser");
+        
+        vm.name = user.name;
+        vm.photo = user.photo;  
+      }
       
-      vm.name = "Test user";
       
       vm.go = function(state) {
         $state.go(state);
@@ -26,5 +31,7 @@
         e.stopPropagation();
         $mdSidenav('sidebar').close();
       }
+
+      init();
     }
 })();

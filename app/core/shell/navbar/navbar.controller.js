@@ -4,25 +4,36 @@
         .module('core.shell')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['$mdSidenav'];
+    NavbarController.$inject = ['$scope','$mdSidenav','$state','localdb'];
 
-    function NavbarController($mdSidenav) {
-        var ctrl = this;
+    function NavbarController($scope,$mdSidenav,$state,localdb) {
+        $scope.vm = {}; //this makes vm appears in the DOM
+        var vm = $scope.vm; 
 
-        ctrl.$onInit = function() {
-            ctrl.summary = { show : false }; 
+        function init(){
+            var user = localdb.get("loggeduser");
+            vm.name = user.name;
+            vm.photo = user.photo;  
+          }
+
+        vm.go = function(state) {
+            $state.go(state);
+          }
+
+        vm.$onInit = function() {
+            vm.summary = { show : false }; 
             
         };
 
-        ctrl.closeSidebar = function(e) {
+        vm.closeSidebar = function(e) {
             e.stopPropagation();
             $mdSidenav('sidebar').close();
         }
 
-        ctrl.toggleSidebar = function(e) {
+        vm.toggleSidebar = function(e) {
             e.stopPropagation();
             $mdSidenav('sidebar').toggle();
         };
-
+        init();
     }
 })();
