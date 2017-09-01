@@ -43,7 +43,8 @@ gulp.task('libjs',function(){
 	    "js/src/angular-messages/angular-messages.min.js",
 	    "js/src/angular-aria/angular-aria.min.js",
 	    "js/src/angular-animate/angular-animate.min.js",
-	    "js/src/angular-material/angular-material.min.js"
+	    "js/src/angular-material/angular-material.min.js",
+	    "js/src/angularfire/dist/angularfire.min.js"
 		])
 		.pipe(concat('lib.js'))
 		.pipe(gulp.dest('./dist/js/'))
@@ -73,11 +74,15 @@ gulp.task('appjs',function(){
 	    'app/biz/cliente/cliente.service.js',
 	    'app/biz/cliente/cliente.list.controller.js',
 	    'app/biz/cliente/cliente.details.controller.js',
+	    'app/biz/cliente/cliente.component.js',
+	    'app/biz/cliente/cliente.add.component.js',
+	    'app/biz/cliente/cliente.add.controller.js',
 
 	    'app/biz/user/user.module.js',
 	    'app/biz/user/user.service.js',
 
 	    'app/core/shell/shell.controller.js',
+	    'app/core/shell/shell.component.js',
 
 	    'app/core/localdb/core.localdb.service.js',
 	    
@@ -89,6 +94,7 @@ gulp.task('appjs',function(){
 	    'app/core/shell/navbar/navbar.component.js',
 	    'app/core/shell/sidebar/sidebar.controller.js',
 	    'app/core/shell/sidebar/sidebar.component.js'
+
 	    
 	])
 	.pipe(concat('app.js'))

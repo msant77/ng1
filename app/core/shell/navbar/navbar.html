@@ -1,22 +1,22 @@
 <md-toolbar 
   class="md-hue-2"
-  ng-click="$ctrl.closeSidebar($event)"> 
-  <md-button ng-click="$ctrl.toggleSidebar($event)" aria-label="Abrir menu sidebar" >
+  ng-click="vm.closeSidebar($event)"> 
+  <md-button ng-click="vm.toggleSidebar($event)" aria-label="Abrir menu sidebar" >
   
     <div class="">
-      <img src="images/profile.jpeg" alt="dr">
+      <img style="width: 100px;" src="{{vm.photo}}" alt="{{vm.name}}">
     </div>
 
-    <span>Test user</span>
+    <span>{{vm.name}}</span>
   </md-button> 
 
   <div class="md-toolbar-tools">
-    <md-button class="md-icon-button" aria-label="Favorite">
-      <a href="#!/cliente"><i class="fa fa-list fa-2x"></i></a>
+    <md-button aria-label="Lista de clientes" class="md-icon-button" ng-click="vm.go('cliente')">
+      <i class="fa fa-list fa-2x"></i>
     </md-button>
 
-    <md-button class="md-icon-button" aria-label="Favorite">
-      <a href="#!/add"><i class="fa fa-plus fa-2x"></i></a>
+    <md-button  aria-label="Cadastro de clientes" class="md-icon-button" ng-click="vm.go('add')">
+      <i class="fa fa-plus fa-2x"></i>
     </md-button>
 
   </div>

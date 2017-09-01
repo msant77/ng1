@@ -3,11 +3,12 @@
     <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
       <md-toolbar>
         <div class="md-toolbar-tools">
-          <h2><span>Login</span></h2>
+          <h2><span>Login Google</span></h2>
         </div>
       </md-toolbar>
       <md-card-content>
-        <form name="$ctrl.loginForm" ng-submit="$ctrl.login()">
+        
+        <!-- <form name="$ctrl.loginForm" ng-submit="$ctrl.login()">
           <md-input-container class="md-block">
             <label>Login</label>
             <input type="text" ng-model="$ctrl.email" name="email" />
@@ -44,6 +45,11 @@
               Login
             </md-button>
         </form>
+         -->
+         <md-button ng-click="$ctrl.login()"
+            class="md-raised md-primary">
+            Login
+          </md-button>
       </md-card-content>
     </md-card>
   </md-content>
