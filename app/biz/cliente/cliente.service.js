@@ -9,6 +9,7 @@
   /* @ngInject */
   function BizClienteService($http, $q, config, localdb) {
     var service = {
+      add : add, 
       addView : addView, 
       addClose : addClose, 
       // addDismiss : addDismiss, 
@@ -21,6 +22,20 @@
     var list = localdb.get(key); 
 
     return service;
+
+    function add (name,idade) { 
+      return $q(function(resolve, reject) {
+        var cliente = {
+            name : name,
+            idade : idade,
+            views : 0,
+            closed : 0,
+            dismissed : 0
+          };
+        list.push(cliente);  
+        resolve(true);
+      });      
+    }
 
     function addView (item) { 
       var found = list.find(function(i) {

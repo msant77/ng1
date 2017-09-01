@@ -13,7 +13,10 @@
       
       vm.name = "Test user";
       
-      
+      vm.go = function(state) {
+        $state.go(state);
+      }
+
       vm.logout = function() {
         LoginService.logout();
         $state.go('login');

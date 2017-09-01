@@ -9,12 +9,17 @@
 
  	function coreRun ($stateProvider, $urlRouterProvider, appRoutes) { 
 
-    $urlRouterProvider.otherwise("/login");
+		   $urlRouterProvider
+						.when('', '/')
+						.when('/', '/login')
+						.otherwise('/login');		
+						
+			$urlRouterProvider.otherwise("/");
 
-    appRoutes
-      .forEach(
-        function (route) {
-          $stateProvider.state(route.name, route.ngroute);
-        });
+    // appRoutes
+    //   .forEach(
+    //     function (route) {
+    //       $stateProvider.state(route.name, route.ngroute);
+    //     });
  	}
 })();

@@ -9,7 +9,8 @@
   /* @ngInject */
   function BizClienteListController($scope, coreModal, bizClienteService,LoginService) {
 
-    var vm = this;
+    $scope.vm = {}; //this makes vm appears in the DOM
+    var vm = $scope.vm; //this makes it to appear in here  
     vm.title = 'Clientes';
     activate();
 
