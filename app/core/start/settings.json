@@ -29,6 +29,14 @@
       "modules" : ["blank"]
     }, 
     {
+      "name" : "shell", 
+      "ngroute" : {
+              "url": "shell",
+              "templateUrl": "/app/core/shell/shell.html"
+            },
+      "modules" : ["*"]
+    }, 
+    {
       "name" : "clientes", 
       "ngroute" : {
               "url": "/clientes",
