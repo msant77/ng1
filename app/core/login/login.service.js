@@ -5,9 +5,9 @@
         .module('app.core')
         .service('LoginService', LoginService);
 
-    LoginService.$inject = ['$firebaseAuth','localdb','$q', '$window'];
+    LoginService.$inject = ['$firebaseAuth','localdb','$q', '$window', 'config'];
 
-    function LoginService($firebaseAuth, localdb, $q,$window) { 
+    function LoginService($firebaseAuth, localdb, $q,$window, config) { 
         
         this.loginGoogle = function() {
             return $q(function(resolve, reject){
@@ -31,16 +31,14 @@
             var auth = $firebaseAuth();
             return $q(function(resolve, reject){
                 auth.$signInWithEmailAndPassword(email, password).then(function(firebaseUser) {
-                  localdb.set("loggeduser", firebaseUser.uid);
-                  console.log("Signed in as:", firebaseUser.uid);
-                  resolve(firebaseUser.uid);
+                  var loggeduser = {name:"guest",token:firebaseUser.uid,photo:config.urlimg+"/images/profile.jpeg"}
+                  resolve(loggeduser);
                 }).catch(function(error) {
                     if(error.code == "auth/user-not-found"){
                         auth.$createUserWithEmailAndPassword(email,password)
-                          .then(function(firebaseUser) {
-                            console.log("User " + firebaseUser.uid + " created successfully!");
-                            localdb.set("loggeduser", firebaseUser.uid);
-                            resolve(firebaseUser.uid);
+                          .then(function(firebaseUser) {                            
+                            var loggeduser = {name:"guest",token:firebaseUser.uid,photo:config.urlimg+"/images/profile.jpeg"}
+                            resolve(loggeduser);
                           }).catch(function(error) {
                             console.error("Error: ", error);
                             reject(error.message);

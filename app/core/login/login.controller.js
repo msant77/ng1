@@ -24,7 +24,7 @@
       vm.loginEmail = function(){
         var promise = LoginService.loginEmail(vm.email, vm.password);
         promise.then(function(data){
-            // console.log(data);
+            localdb.set("loggeduser", data);
             $state.go('cliente');
         })
         .catch(function(data){

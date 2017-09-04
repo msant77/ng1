@@ -15,7 +15,8 @@
     "databaseURL": "https://projeto-ptm.firebaseio.com",
     "projectId": "projeto-ptm",
     "storageBucket": "projeto-ptm.appspot.com",
-    "messagingSenderId": "548515686881"
+    "messagingSenderId": "548515686881", 
+    "urlimg":"http://renan.projeto.s3-website-us-east-1.amazonaws.com"
   },
   "routes" : [
     {
