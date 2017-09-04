@@ -19,15 +19,7 @@ gulp.task('html',function(){
 gulp.task('appcss',function(){
 
 	return gulp.src([
-    	"css/app.css"
-	])
-	.pipe(concat('app.css'))
-	.pipe(gulp.dest('./dist/css/'));
-});
-
-gulp.task('vendorcss',function(){
-
-	return gulp.src([
+    	"assets/css/app.css"
 	])
 	.pipe(concat('app.css'))
 	.pipe(gulp.dest('./dist/css/'));

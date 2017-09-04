@@ -1,31 +1,28 @@
 <md-sidenav md-component-id="sidebar" md-whiteframe="4">
   <md-content>
-    <header layout="column">
-      <div layout="row" flex layout-align="center center">
-        <md-icon ng-click="vm.closeSidebar($event)">keyboard_arrow_left</md-icon>
+    <header>
+      <div layout="row" layout-align="end end">
+        <md-button ng-click="vm.closeSidebar($event)"><md-icon >keyboard_arrow_left</md-icon></md-button>
       </div>
-
-      <div >
+      <div layout="row" flex layout-align="center center">
         <img style="width: 100px;" src="{{vm.photo}}">
       </div>
-
-      <h3>{{vm.name}}</h3>
+      <div layout="row" flex layout-align="center center">
+        <h3>{{vm.name}}</h3>
+      </div>      
     </header>
     
     <md-list>
-      <md-list-item>
-        
-        <p flex class="md-body-2"><a ng-click="vm.go('cliente')"><i class="fa fa-list fa-lg"></i>&nbsp;Lista de clientes</a></p>
+      <md-list-item>        
+        <md-button ng-click="vm.go('cliente')"><i class="fa fa-list fa-lg"></i>&nbsp;Lista de clientes</md-button>
       </md-list-item>
 
-      <md-list-item>
-        
-        <p flex class="md-body-2"><a ng-click="vm.go('add')"><i class="fa fa-plus fa-lg"></i>&nbsp;Adicionar cliente</a></p>
+      <md-list-item>        
+        <md-button ng-click="vm.go('add')"><i class="fa fa-plus fa-lg"></i>&nbsp;Adicionar cliente</md-button>
       </md-list-item>
 
-      <md-list-item>
-        
-        <p flex class="md-body-2"><a ng-click="vm.logout()"><i class="fa fa-sign-out fa-lg"></i>&nbsp;Logout</a></p>
+      <md-list-item>        
+        <md-button ng-click="vm.logout()"><i class="fa fa-sign-out fa-lg"></i>&nbsp;Logout</md-button>
       </md-list-item>
     </md-list>
   </md-content>

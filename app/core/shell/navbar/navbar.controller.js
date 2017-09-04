@@ -12,7 +12,8 @@
 
         function init(){
             var user = localdb.get("loggeduser");
-            vm.name = user.name;
+            var name = user.name.split(' ');
+            vm.name = name[0];
             vm.photo = user.photo;  
           }
 
