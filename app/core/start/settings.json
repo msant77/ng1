@@ -9,7 +9,13 @@
     "pulseInterval" : 12000,
     "tablePageSize" : 20,
     "serverPathPrd": "http://some/path/",
-    "serverPath": "http://some/path/"
+    "serverPath": "http://some/path/",
+    "apiKey": "AIzaSyAVR9Jaa8wyHKSo_LRKlA4gX7_d1_afuKg",
+    "authDomain": "projeto-ptm.firebaseapp.com",
+    "databaseURL": "https://projeto-ptm.firebaseio.com",
+    "projectId": "projeto-ptm",
+    "storageBucket": "projeto-ptm.appspot.com",
+    "messagingSenderId": "548515686881"
   },
   "routes" : [
     {

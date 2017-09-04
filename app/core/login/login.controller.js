@@ -4,50 +4,35 @@
         .module('app.core')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['LoginService', '$state', 'coreModal','localdb'];
+    LoginController.$inject = ['$scope','LoginService', '$state', 'coreModal','localdb'];
 
-    function LoginController(LoginService, $state, coreModal,localdb) {
-        var ctrl = this;
+    function LoginController($scope,LoginService, $state, coreModal,localdb) {
+      $scope.vm = {}; //this makes vm appears in the DOM
+      var vm = $scope.vm; //this makes it to appear in here  
 
-        ctrl.login = function() {
-            var provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithPopup(provider).then(function(result) {
-              // console.log("success");
-              // This gives you a Google Access Token. You can use it to access the Google API.
-              var token = result.credential.accessToken;
-              // The signed-in user info.
-              var user = result.user;
-              var loggeduser = {name:user.displayName,token:token,photo:user.photoURL}
-
-              localdb.set("loggeduser", loggeduser);
-              // console.log(loggeduser);
-              $state.go('cliente');
-              // ...
-            }).catch(function(error) {
-              // console.log("error");
-              // Handle Errors here.
-              var errorCode = error.code;
-              var errorMessage = error.message;
-              // The email of the user's account used.
-              var email = error.email;
-              // The firebase.auth.AuthCredential type that was used.
-              var credential = error.credential;
-              // console.log(errorCode);
-              // console.log(errorMessage);
-              // console.log(email);
-              // console.log(credential);
+      vm.loginGoogle = function() {
+          var promise = LoginService.loginGoogle();
+            promise.then(function(data){
+                // console.log(data);
+                localdb.set("loggeduser", data);
+                $state.go('cliente');
+            })
+            .catch(function(data){
+                console.log(data);
             });
-            // var promise = LoginService.login(ctrl.email, ctrl.password);
-            // promise.then(function(data){
-            //     console.log(data);
-            //     $state.go('cliente');
-            // })
-            // .catch(function(data){
-            //     ctrl.loginForm.password.$setValidity('invalid_password', false);
-            //     coreModal.info(data, "Opa!", function () {
-            //         console.log('the ok button from the info box has been clicked'); 
-            //       });
-            // });
-        };
+      };
+      vm.loginEmail = function(){
+        var promise = LoginService.loginEmail(vm.email, vm.password);
+        promise.then(function(data){
+            // console.log(data);
+            $state.go('cliente');
+        })
+        .catch(function(data){
+            vm.loginForm.password.$setValidity('invalid_password', false);
+            coreModal.info(data, "Opa!", function () {
+                console.log('the ok button from the info box has been clicked'); 
+              });
+        });
+      }
     }
 })();
