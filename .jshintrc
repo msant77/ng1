@@ -1,0 +1,11 @@
+{
+  "esversion": 6,
+  "undef": true,
+  "asi": true,
+  "globals": {
+    "console": false,
+    "document": false,
+    "alert": false,
+    "angular": false
+  }
+}

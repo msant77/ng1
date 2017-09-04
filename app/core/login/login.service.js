@@ -10,21 +10,21 @@
     function LoginService($firebaseAuth, localdb, $q,$window, config) { 
         
         this.loginGoogle = function() {
-            return $q(function(resolve, reject){
-                var provider = new firebase.auth.GoogleAuthProvider();
-                firebase.auth().signInWithPopup(provider).then(function(result) {
-                  var token = result.credential.accessToken;
-                  var user = result.user;
-                  var loggeduser = {name:user.displayName,token:token,photo:user.photoURL}
-                  resolve(loggeduser);
-                }).catch(function(error) {
-                  var errorCode = error.code;
-                  var errorMessage = error.message;
-                  var email = error.email;
-                  var credential = error.credential;
-                  reject(error);
-                });
-            });
+            var auth = $firebaseAuth();
+	        return $q(function(resolve, reject){
+		        auth.$signInWithPopup('google').then(function(result) {
+			        var token = result.credential.accessToken;
+			        var user = result.user;
+			        var loggeduser = {name:user.displayName,token:token,photo:user.photoURL}
+			        resolve(loggeduser);
+		        }).catch(function(error) {
+			        var errorCode = error.code;
+			        var errorMessage = error.message;
+			        var email = error.email;
+			        var credential = error.credential;
+			        reject(error);
+		        });
+          });
         }
 
         this.loginEmail = function(email, password) {
@@ -57,8 +57,8 @@
 
         this.islogged = function() {
             var loggeduser = localdb.get("loggeduser");
-            if(loggeduser && loggeduser != ""){
-                return true;
+            if(loggeduser && loggeduser){
+	            return true;
             }else{
                 $window.location.href = "/";
             }
