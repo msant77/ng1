@@ -1,0 +1,56 @@
+{
+  "config": {
+    "title" : "NG1 - AngularJS Enterprise Scaffolding",
+    "version" : "v0.0.1", 
+    "mod": 1,
+    "defaultView": "clientes",
+    "modCSS" : "dev",
+    "userIcon" : "user-secret",
+    "pulseInterval" : 12000,
+    "tablePageSize" : 20,
+    "serverPathPrd": "http://some/path/",
+    "serverPath": "http://some/path/",
+    "apiKey": "AIzaSyAVR9Jaa8wyHKSo_LRKlA4gX7_d1_afuKg",
+    "authDomain": "projeto-ptm.firebaseapp.com",
+    "databaseURL": "https://projeto-ptm.firebaseio.com",
+    "projectId": "projeto-ptm",
+    "storageBucket": "projeto-ptm.appspot.com",
+    "messagingSenderId": "548515686881", 
+    "urlimg":"http://renan.projeto.s3-website-us-east-1.amazonaws.com"
+  },
+  "routes" : [
+    {
+      "name" : "home", 
+      "ngroute" : {
+              "url": "/home",
+              "templateUrl": "/app/core/start/welcome.html"
+            },
+      "modules" : ["*"]
+    }, 
+    {
+      "name" : "blank", 
+      "ngroute" : {
+              "url": "blank",
+              "templateUrl": "/app/core/start/welcome.html"
+            },
+      "modules" : ["blank"]
+    }, 
+    {
+      "name" : "shell", 
+      "ngroute" : {
+              "url": "shell",
+              "templateUrl": "/app/core/shell/shell.html"
+            },
+      "modules" : ["*"]
+    }, 
+    {
+      "name" : "clientes", 
+      "ngroute" : {
+              "url": "/clientes",
+              "templateUrl": "app/biz/cliente/cliente.list.html",
+              "controller" : "BizClienteListController as vm"
+            },
+        "modules" : ["admin", "dev"]
+    }
+  ]
+}
