@@ -1,0 +1,17 @@
+<md-dialog aria-label="{{vm.title}}"> 
+	 <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{vm.title}}</h2>
+      </div>
+    </md-toolbar>
+	 <md-dialog-content>
+	 	<div class="md-dialog-content">
+			<p>{{vm.message}}</p>
+		</div>
+	 </md-dialog-content> 
+	 <md-dialog-actions> 
+	   <md-button ng-repeat="button in vm.buttons"  ng-class="button.class" ng-click="vm.buttonClick(button)"> 
+	     <i ng-class="button.icon"></i>&nbsp;{{button.text}}
+	   </md-button> 
+	 </md-dialog-actions> 
+</md-dialog>

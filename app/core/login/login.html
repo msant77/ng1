@@ -1,0 +1,74 @@
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Google">
+        <md-content class="md-padding ">
+          <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33" class="loginform">
+            <md-toolbar>
+              <div class="md-toolbar-tools">
+                <h2><span>Login Google</span></h2>
+              </div>
+            </md-toolbar>
+            <md-card-content>
+              
+               <md-button ng-click="vm.loginGoogle()"
+                  class="md-raised md-primary">
+                  Login
+                </md-button>
+            </md-card-content>
+          </md-card>
+        </md-content>
+      </md-tab>
+      <md-tab label="Email">
+        <md-content class="md-padding">   
+          <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33" class="loginform">
+              <md-toolbar>
+                <div class="md-toolbar-tools">
+                  <h2><span>Login Email</span></h2>
+                </div>
+              </md-toolbar>
+              <md-card-content>                
+                 <form name="vm.loginForm" ng-submit="vm.loginEmail()">
+                  <md-input-container class="md-block">
+                    <label>Login</label>
+                    <input type="text" ng-model="vm.email" name="email" />
+                    <div ng-messages="Form.email.$error" role="alert" multiple="">
+                      <div ng-message="required" class="my-message">Please enter your email.</div>
+                    </div>
+                  </md-input-container>
+                  <md-input-container class="md-block">
+                    <label>Password</label>
+                    <input
+                      ng-model="vm.password"
+                      name="password"
+                      type="{{vm.showPassword ? 'text' : 'password'}}">
+                    
+                    <div
+                      class="login__togglePassword"
+                      ng-click="vm.showPassword = !vm.showPassword">
+                      <md-icon ng-if="!vm.showPassword">visibility</md-icon>
+                      <md-icon ng-if="vm.showPassword">visibility_off</md-icon>
+                    </div>
+
+                    <div ng-messages="vm.loginForm.$error" ng-show="vm.loginForm.$error.invalid_password">
+                      <div ng-messages="invalid_password" layout="row" class="login__error__message"> 
+                        <span flex>Usuário ou senha inválidos</span>
+                        <md-icon>warning</md-icon>
+                      </div>
+                    </div> 
+
+                  </md-input-container>
+                    <md-button
+                      class="md-raised md-primary"
+                      type="submit"
+                      ng-disabled="!vm.email || !vm.password">
+                      Login
+                    </md-button>
+                </form>
+              </md-card-content>
+            </md-card>                   
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>

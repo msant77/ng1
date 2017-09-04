@@ -1,0 +1,19 @@
+<div ng-cloak>
+  <md-content>
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button aria-label="Lista de clientes" class="md-button" ng-click="vm.go('cliente')">
+          <i class="fa fa-list fa-lg"></i>
+        </md-button>
+        <md-button  aria-label="Cadastro de clientes" class="md-button" ng-click="vm.go('add')">
+          <i class="fa fa-plus fa-lg"></i>
+        </md-button>
+        <span flex></span>
+        <md-button ng-click="vm.toggleSidebar($event)" aria-label="Abrir menu sidebar" class="avatar">          
+          <h4>{{vm.name}}</h4>
+          <img src="{{vm.photo}}" alt="{{vm.name}}">          
+        </md-button> 
+      </div>
+    </md-toolbar>
+</md-content>
+</div>
