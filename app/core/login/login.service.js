@@ -57,8 +57,8 @@
 
         this.islogged = function() {
             var loggeduser = localdb.get("loggeduser");
-            if(loggeduser && loggeduser != ""){
-                return true;
+            if(loggeduser && loggeduser){
+	            return true;
             }else{
                 $window.location.href = "/";
             }

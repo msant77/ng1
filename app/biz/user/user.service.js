@@ -27,7 +27,8 @@
       }
 
       function fail(e) {
-        return exception.catcher('XHR Failed for getPeople')(e);
+        console.log(e);
+        //return exception.catcher('XHR Failed for getPeople')(e);
       }
     }
   }
