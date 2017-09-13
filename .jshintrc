@@ -5,7 +5,23 @@
   "globals": {
     "console": false,
     "document": false,
-    "alert": false,
-    "angular": false
+    "alert": true,
+    "angular": false,
+
+    // firebase
+    "firebase": false,
+
+    // karma
+    "describe": false,
+    "it": false,
+    "expect": false,
+    "module": false,
+    "beforeEach": false,
+    "inject": false,
+    "readJSON": false,
+    "spyOn": false,
+
+    // node
+    "require": false
   }
 }
