@@ -1,27 +1,25 @@
 {
   "esversion": 6,
   "undef": true,
-  "asi": true,
-  "globals": {
-    "console": false,
-    "document": false,
-    "alert": true,
-    "angular": false,
+	"asi": true,
+	"jasmine": true,
+	"globals": {
+		"console": false,
+		"document": false,
+		"alert": true,
 
-    // firebase
-    "firebase": false,
+		// angular
+		"angular": false,
+		"inject": false,
 
-    // karma
-    "describe": false,
-    "it": false,
-    "expect": false,
-    "module": false,
-    "beforeEach": false,
-    "inject": false,
-    "readJSON": false,
-    "spyOn": false,
+		// firebase
+		"firebase": false,
 
-    // node
-    "require": false
-  }
+		// misc
+		"module": false,
+		"readJSON": false,
+
+		// node
+		"require": false
+	}
 }
