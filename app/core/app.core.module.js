@@ -2,7 +2,7 @@
 	'use strict';
 
  	angular
- 		.module('app.core', ['core.shell', 'core.start', 'ui.router', 'ngMaterial', 'ngMessages', 'ngSanitize','ngStorage', 'biz.services','firebase'])
+ 		.module('app.core', ['core.shell', 'core.start', 'ui.router', 'ngMaterial', 'ngMessages', 'ngSanitize','ngStorage', 'biz.services','firebase', 'md.data.table'])
  		.config(coreRun);
 
  	coreRun.$inject = ['$stateProvider', '$urlRouterProvider', 'appRoutes']; 

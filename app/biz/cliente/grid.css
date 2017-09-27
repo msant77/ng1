@@ -1,0 +1,6 @@
+.checkboxes > md-checkbox {
+  margin: 0;
+  padding: 16px;
+  min-width: 300px;
+  flex: 0 0 auto;
+}

@@ -19,7 +19,9 @@ gulp.task('html',function(){
 gulp.task('appcss',function(){
 
 	return gulp.src([
-    	"assets/css/app.css"
+    	"assets/css/app.css",
+    	"app/biz/cliente/grid.css",
+    	"js/src/angular-material-data-table/dist/md-data-table.min.css"
 	])
 	.pipe(concat('app.css'))
 	.pipe(gulp.dest('./dist/css/'));
@@ -36,7 +38,8 @@ gulp.task('libjs',function(){
 	    "js/src/angular-aria/angular-aria.min.js",
 	    "js/src/angular-animate/angular-animate.min.js",
 	    "js/src/angular-material/angular-material.min.js",
-	    "js/src/angularfire/dist/angularfire.min.js"
+	    "js/src/angularfire/dist/angularfire.min.js",
+	    "js/src/angular-material-data-table/dist/md-data-table.js"
 		])
 		.pipe(concat('lib.js'))
 		.pipe(gulp.dest('./dist/js/'))
@@ -85,9 +88,7 @@ gulp.task('appjs',function(){
 	    'app/core/shell/navbar/navbar.controller.js',
 	    'app/core/shell/navbar/navbar.component.js',
 	    'app/core/shell/sidebar/sidebar.controller.js',
-	    'app/core/shell/sidebar/sidebar.component.js'
-
-	    
+	    'app/core/shell/sidebar/sidebar.component.js'	    
 	])
 	.pipe(concat('app.js'))
 	.pipe(gulp.dest('./dist/js/'))
