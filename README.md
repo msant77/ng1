@@ -101,3 +101,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * João Pedro
 * Marcos Moritz 
 * Renan Bet
+.

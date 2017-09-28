@@ -1,0 +1,25 @@
+{
+  "esversion": 6,
+  "undef": true,
+	"asi": true,
+	"jasmine": true,
+	"globals": {
+		"console": false,
+		"document": false,
+		"alert": true,
+
+		// angular
+		"angular": false,
+		"inject": false,
+
+		// firebase
+		"firebase": false,
+
+		// misc
+		"module": false,
+		"readJSON": false,
+
+		// node
+		"require": false
+	}
+}

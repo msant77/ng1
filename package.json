@@ -4,7 +4,8 @@
   "description": "ng1",
   "main": "core.start.module.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start --single-run",
+    "lint": "jshint app/**/."
   },
   "author": "Renan Bet Rodrigues",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "gulp-minify": "^1.0.0"
   },
   "devDependencies": {
+    "angular-mocks": "^1.6.x",
     "babel-preset-es2015": "^6.24.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
@@ -19,6 +21,12 @@
     "gulp-htmlmin": "^3.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-strip-comments": "^2.5.1",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "jasmine": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-read-json": "^1.1.0"
   }
 }

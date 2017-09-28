@@ -9,12 +9,12 @@ var strip = require('gulp-strip-comments');
 gulp.task('default', ['html','libjs','appjs','appcss']);
 
 gulp.task('html',function(){
-	return gulp.src('./index.html')
-	.pipe(gulp.dest('./bkp/'))
-	.pipe(strip())
+  return gulp.src('./index.html')
+    .pipe(gulp.dest('./bkp/'))
+    .pipe(strip())
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('./'));
-});		
+});
 
 gulp.task('appcss',function(){
 
@@ -39,6 +39,7 @@ gulp.task('libjs',function(){
 	    "js/src/angular-animate/angular-animate.min.js",
 	    "js/src/angular-material/angular-material.min.js",
 	    "js/src/angularfire/dist/angularfire.min.js",
+      "js/src/firebase/firebase.js",
 	    "js/src/angular-material-data-table/dist/md-data-table.js"
 		])
 		.pipe(concat('lib.js'))
@@ -94,10 +95,10 @@ gulp.task('appjs',function(){
 	.pipe(gulp.dest('./dist/js/'))
 	.pipe(rename('app.min.js'))
 	.pipe(babel({
-            presets: ['es2015']
-        }))
-    .pipe(uglify().on('error', function(e){
-            console.log(e);
-        }))
-    .pipe(gulp.dest('./dist/js/'));
+      presets: ['es2015']
+  }))
+  .pipe(uglify().on('error', function(e){
+    console.log(e);
+  }))
+  .pipe(gulp.dest('./dist/js/'));
 });
