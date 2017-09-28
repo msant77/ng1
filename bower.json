@@ -17,7 +17,8 @@
     "angular-messages": "^1.6.x",
     "angular-aria": "^1.6.x",
     "angularfire": "#2.3.0",
-    "firebase": "^3.9.x"
+    "firebase": "^3.9.x",
+    "angular-material-data-table": "^0.10.10"
   },
   "devDependencies": {}
 }

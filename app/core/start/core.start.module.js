@@ -7,8 +7,11 @@
   function fetchData() {
     var initInjector = angular.injector(['ng']);
     var $http = initInjector.get('$http');
-
-    return $http.get('/app/core/start/settings.json').then(function(response) {
+    
+    var url = window.location.href;
+    var aux = url.split("#!");
+    var path = aux[0];
+    return $http.get(path+'app/core/start/settings.json').then(function(response) {
       var config = response.data.config;
       coreStart.constant('config', config);
       coreStart.constant('appRoutes', response.data.routes); 

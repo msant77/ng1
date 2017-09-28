@@ -4,7 +4,7 @@
  	angular
  		.module('app.core', [
       'ui.router', 'ngMaterial', 'ngMessages', 'ngSanitize', 'ngStorage', 'firebase',
-      'core.shell', 'core.start', 'biz.services'])
+      'md.data.table', 'core.shell', 'core.start', 'biz.services'])
  		.config(coreRun);
 
  	coreRun.$inject = ['$stateProvider', '$urlRouterProvider', 'appRoutes']; 

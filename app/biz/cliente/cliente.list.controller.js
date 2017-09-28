@@ -12,6 +12,27 @@
     $scope.vm = {}; //this makes vm appears in the DOM
     var vm = $scope.vm; //this makes it to appear in here  
     vm.title = 'Clientes';
+    startGrid();
+    vm.selected = [];
+    vm.limitOptions = [2, 4, 6];
+    
+    vm.options = {
+      rowSelection: true,
+      multiSelect: true,
+      autoSelect: true,
+      decapitate: false,
+      largeEditDialog: false,
+      boundaryLinks: false,
+      limitSelect: true,
+      pageSelect: true
+    };
+    
+    vm.query = {
+      order: 'name',
+      limit: 2,
+      page: 1
+    };
+
     activate();
 
     vm.open = function openItem (item) {
@@ -70,8 +91,37 @@
       bizClienteService.getList().then(function (res) {
         vm.list = res; 
       });   
-      
+    }
 
+    function startGrid(){
+      
+    }
+
+    vm.toggleLimitOptions = function () {
+      vm.limitOptions = vm.limitOptions ? undefined : [2,4,6];
+    };
+    
+    vm.getTypes = function () {
+      return [];
+    };
+    
+    vm.loadStuff = function () {
+      vm.promise = $timeout(function () {
+        // loading
+      }, 2000);
+    }
+    
+    vm.logItem = function (item) {
+      console.log(item.name, 'was selected');
+    };
+    
+    vm.logOrder = function (order) {
+      console.log('order: ', order);
+    };
+    
+    vm.logPagination = function (page, limit) {
+      console.log('page: ', page);
+      console.log('limit: ', limit);
     }
   }
 })();
