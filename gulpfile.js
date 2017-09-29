@@ -19,9 +19,11 @@ gulp.task('html',function(){
 gulp.task('appcss',function(){
 
 	return gulp.src([
-    	"assets/css/app.css",
     	"app/biz/cliente/grid.css",
-    	"js/src/angular-material-data-table/dist/md-data-table.min.css"
+    	"js/src/angular-material-data-table/dist/md-data-table.min.css",
+    	"js/src/angular-material/angular-material.min.css",
+    	"js/src/font-awesome/css/font-awesome.min.css",
+    	"assets/css/app.css"
 	])
 	.pipe(concat('app.css'))
 	.pipe(gulp.dest('./dist/css/'));
@@ -39,7 +41,7 @@ gulp.task('libjs',function(){
 	    "js/src/angular-animate/angular-animate.min.js",
 	    "js/src/angular-material/angular-material.min.js",
 	    "js/src/angularfire/dist/angularfire.min.js",
-      "js/src/firebase/firebase.js",
+      	"js/src/firebase/firebase.js",
 	    "js/src/angular-material-data-table/dist/md-data-table.js"
 		])
 		.pipe(concat('lib.js'))

@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-	var coreStart = angular.module('core.start', []); 
+    var coreStart = angular.module('core.start', []); 
 
   fetchData().then(bootstrapApplication);
 
@@ -14,7 +14,7 @@
     return $http.get(path+'app/core/start/settings.json').then(function(response) {
       var config = response.data.config;
       coreStart.constant('config', config);
-      coreStart.constant('appRoutes', response.data.routes); 
+      // coreStart.constant('appRoutes', response.data.routes); 
       var configfirebase = {
             apiKey: config.apiKey,
             authDomain: config.authDomain,

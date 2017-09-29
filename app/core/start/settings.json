@@ -17,40 +17,5 @@
     "storageBucket": "projeto-ptm.appspot.com",
     "messagingSenderId": "548515686881", 
     "urlimg":"http://renan.projeto.s3-website-us-east-1.amazonaws.com"
-  },
-  "routes" : [
-    {
-      "name" : "home", 
-      "ngroute" : {
-              "url": "/home",
-              "templateUrl": "/app/core/start/welcome.html"
-            },
-      "modules" : ["*"]
-    }, 
-    {
-      "name" : "blank", 
-      "ngroute" : {
-              "url": "blank",
-              "templateUrl": "/app/core/start/welcome.html"
-            },
-      "modules" : ["blank"]
-    }, 
-    {
-      "name" : "shell", 
-      "ngroute" : {
-              "url": "shell",
-              "templateUrl": "/app/core/shell/shell.html"
-            },
-      "modules" : ["*"]
-    }, 
-    {
-      "name" : "clientes", 
-      "ngroute" : {
-              "url": "/clientes",
-              "templateUrl": "app/biz/cliente/cliente.list.html",
-              "controller" : "BizClienteListController as vm"
-            },
-        "modules" : ["admin", "dev"]
-    }
-  ]
+  }
 }

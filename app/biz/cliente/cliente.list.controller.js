@@ -5,9 +5,9 @@
     .module('biz.cliente')
     .controller('BizClienteListController', BizClienteListController);
 
-  BizClienteListController.$inject = ['$scope', 'coreModal', 'bizClienteService','LoginService'];
+  BizClienteListController.$inject = ['$scope', 'coreModal', 'bizClienteService','LoginService','$timeout'];
   /* @ngInject */
-  function BizClienteListController($scope, coreModal, bizClienteService,LoginService) {
+  function BizClienteListController($scope, coreModal, bizClienteService,LoginService,$timeout) {
 
     $scope.vm = {}; //this makes vm appears in the DOM
     var vm = $scope.vm; //this makes it to appear in here  
@@ -108,7 +108,7 @@
     vm.loadStuff = function () {
       vm.promise = $timeout(function () {
         // loading
-      }, 2000);
+      }, 5000);
     }
     
     vm.logItem = function (item) {

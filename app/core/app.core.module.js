@@ -7,21 +7,22 @@
       'md.data.table', 'core.shell', 'core.start', 'biz.services'])
  		.config(coreRun);
 
- 	coreRun.$inject = ['$stateProvider', '$urlRouterProvider', 'appRoutes']; 
+ 	coreRun.$inject = ['$stateProvider', '$urlRouterProvider']; 
 
- 	function coreRun ($stateProvider, $urlRouterProvider, appRoutes) { 
+ 	function coreRun ($stateProvider, $urlRouterProvider) { 
 
-		   $urlRouterProvider
-						.when('', '/')
-						.when('/', '/login')
-						.otherwise('/login');		
-						
-			$urlRouterProvider.otherwise("/");
+	   $urlRouterProvider
+					.when('', '/')
+					.when('/', '/login')
+					.otherwise('/login');		
+					
+		$urlRouterProvider.otherwise("/");
 
-    // appRoutes
-    //   .forEach(
-    //     function (route) {
-    //       $stateProvider.state(route.name, route.ngroute);
-    //     });
+		// TODO add service worker code here
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('./service-worker.js')
+                .then(function() { console.log('Service Worker Registered'); });
+        }
  	}
 })();
