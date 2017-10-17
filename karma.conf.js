@@ -14,13 +14,14 @@ module.exports = function(config) {
     plugins: [
       'karma-phantomjs-launcher',
       'karma-jasmine',
-      'karma-babel-preprocessor'
+      'karma-babel-preprocessor',
+      'karma-coverage'
     ],
     
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'app/**/*.js': ['babel']
+      'app/**/*.js': ['babel', 'coverage']
     },
 
     babelPreprocessor: {
@@ -84,7 +85,13 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     //  available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
+
+
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
 
 
     // web server port
